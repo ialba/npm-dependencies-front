@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+<h2>Specify your search terms: </h2>
+<input type="text" class="searchImpt"
+(keyup.enter)="loadDependencies(searchTerm.value)"
+#searchTerm /><button (click)="loadDependencies(searchTerm.value)" class="searchBtn">Search!</button>
+
+</div>
+<ul>
+
+<search-result
+      *ngFor="let dependency of dependencies"
+      [dependency]="dependency">
+</search-result>
+
+</ul>
